@@ -91,6 +91,7 @@ module Authorization
 
       # Load and parse a DSL from the given file name.
       def load (dsl_file)
+        dsl_file = File.join(Rails.root, dsl_file).to_s
         parse(File.read(dsl_file), dsl_file) if File.exist?(dsl_file)
       end
 
